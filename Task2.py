@@ -24,11 +24,11 @@ def show_phone(args, contacts):
         return "Contact not found."
 
 def show_all(contacts):
-    if contacts:
-        for name, pnone in contacts.items():
-            print(f"{name}: {pnone}")
-    else:
-        print("No contacts")
+     if contacts:
+        contacts_info = "\n".join([f"{name}: {phone}" for name, phone in contacts.items()])
+        return contacts_info
+     else:
+        return "No contacts"
 
 def main():
     contacts = {}
